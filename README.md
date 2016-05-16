@@ -81,4 +81,5 @@ MetricsBundle:
     prefix:   /metrics
 ```
 
-and go to `/metrics/sandbox/newLog` to get your console.
+and go to `/metrics/sandbox/newLog` to get your console:
+![Log console sandbox](http://new.tinygrab.com/09b6643d7d41cdfe7be8bac0bc7d5ac2a8c0b4f711.png)
