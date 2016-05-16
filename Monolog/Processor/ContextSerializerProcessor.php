@@ -51,8 +51,8 @@ class ContextSerializerProcessor
                 foreach ($properties as $_prop => $_value) {
                     $record['context'][$contextItem->getLabel().'_'.$_prop] = $_value;
                 }
+                unset($record['context'][$key]);
             }
-            unset($record['context'][$key]);
         }
 
         return $record;
