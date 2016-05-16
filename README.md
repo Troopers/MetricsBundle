@@ -68,3 +68,17 @@ $logger->info('a test in the past', ['@datetime' => new \DateTime('10 days ago')
 ```
 
 By default, this processor, is only available for the `app` channel, you can add an other or ovveride the service declaration to use on other handler or channel.
+
+## Log sandbox
+
+Sometime, we just want to send log to test something, this log sandbox to help you to accomplish this small thing.
+
+Check the metrics routes are registered (in your `app/config/routing.yml` or `routing_dev.yml`):
+```yml
+MetricsBundle:
+    resource: "@MetricsBundle/Controller/"
+    type:     annotation
+    prefix:   /metrics
+```
+
+and go to `/metrics/sandbox/newLog` to get your console.

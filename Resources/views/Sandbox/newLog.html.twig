@@ -1,0 +1,53 @@
+{% block box %}
+<div class="sandbox--log-container">
+    <h1>Log sandbox</h1>
+    <div class="sandbox--log-box">
+        {% for label, flashes in app.session.flashbag.all %}
+            {% for flash in flashes %}
+                <p style="background-color: #C6E746; padding: 5px;">
+                    <em>
+                        (｡◕‿◕｡) {{ flash }}
+                    </em>
+                </p>
+            {% endfor %}
+        {% endfor %}
+        {{ form_start(form) }}
+        {{ form_rest(form) }}
+        <input type="submit" value="SEND LOG"/>
+        {{ form_end(form) }}
+    </div>
+</div>
+{% endblock box %}
+
+{% block style %}
+<style>
+    h1 {
+        font-family: "Montserrat", "Verdana", "Arial", sans-serif;
+        font-style: normal;
+        font-variant: small-caps;
+        text-align: center;
+        margin: 5px;
+    }
+    div.sandbox--log-container {
+        width: 500px;
+        margin: 20px auto;
+    }
+    div.sandbox--log-box {
+        background-color: antiquewhite;
+        padding: 25px;
+        border: 1px solid darkgray;
+        box-shadow: darkgrey 1px 1px 5px;
+    }
+    .form-group {
+        margin: 10px 0;
+    }
+    input[type="submit"] {
+        border: 1px solid rgb(204, 204, 204);
+        padding: 10px;
+        background: rgb(255, 255, 240);
+        border-radius: 3px;
+        margin: 10px 0;
+        width: 100%;
+    }
+</style>
+{% endblock style %}
