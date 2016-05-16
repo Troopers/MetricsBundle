@@ -83,3 +83,53 @@ MetricsBundle:
 
 and go to `/metrics/sandbox/newLog` to get your console:
 ![Log console sandbox](http://new.tinygrab.com/09b6643d7d41cdfe7be8bac0bc7d5ac2a8c0b4f711.png)
+
+## Dashboard and time filter
+
+Once you finished to build your dashboard in kibana, you'll be able to get an iframe to embed it in your website.
+To handle dashboard in your admin with a time filter, add a row in the database like this:
+```sql
+INSERT INTO `metrics_dashboard` (`id`, `name`, `url`, `height`, `width`)
+VALUES (1, 'base', '<iframe src="http://your.kibana.url[...]"></iframe>', 768, 1200);
+```
+
+Then, embed the `MetricsBundle:Dashboard:show` and override (or not) the available blocks: 
+```twig
+    {% embed 'MetricsBundle:Dashboard:show.html.twig' %}
+        {% block body_title %}
+            Some thing before the title
+            {{ parent() }}
+        {% endblock body_title %}
+        {# disable the timeFilterForm #}
+        {% block body_timeFilterForm %}{% endblock  %}
+    {% endembed %}
+```
+
+### Time filters
+
+Kibana doesn't integrate its time filter in embed dashboard. The `TimeFilter` and `TimeFilterForm` is here to navigate into dashboards.
+
+Although, TimeFilter is an entity, so you can add some relations between your user and some dashboard.
+
+Here are the available time filters:
+
+- Today
+- This week
+- This month
+- This year
+- Yesterday
+- Day before yesterday
+- Last 15 minutes
+- Last 30 minutes
+- Last 1 hour
+- Last 4 hours
+- Last 12 hours
+- Last 24 hours
+- Last 7 days
+- Last 30 days
+- Last 60 days
+- Last 90 days
+- Last 6 months
+- Last 1 year
+- Last 2 years
+- Last 5 years

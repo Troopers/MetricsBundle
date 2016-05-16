@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="fr" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit>
+                <source>dashboard.since.choices.Today.label</source>
+                <target>Aujourd'hui</target>
+            </trans-unit>
+            <trans-unit>
+                <source>dashboard.since.choices.This week.label</source>
+                <target>Cette semaine</target>
+            </trans-unit>
+            <trans-unit>
+                <source>dashboard.since.choices.This month.label</source>
+                <target>Ce mois-ci</target>
+            </trans-unit>
+            <trans-unit>
+                <source>dashboard.since.choices.This year.label</source>
+                <target>Cette année</target>
+            </trans-unit>
+            <trans-unit>
+                <source>dashboard.since.choices.Yesterday.label</source>
+                <target>Hier</target>
+            </trans-unit>
+            <trans-unit>
+                <source>dashboard.since.choices.Day before yesterday.label</source>
+                <target>Avant-hier</target>
+            </trans-unit>
+            <trans-unit>
+                <source>dashboard.since.choices.This day last week.label</source>
+                <target>Le même jour la semaine dernière</target>
+            </trans-unit>
+            <trans-unit>
+                <source>dashboard.since.choices.Previous week.label</source>
+                <target>Semaine dernière</target>
+            </trans-unit>
+            <trans-unit>
+                <source>dashboard.since.choices.Previous month.label</source>
+                <target>Mois précédent</target>
+            </trans-unit>
+            <trans-unit>
+                <source>dashboard.since.choices.Previous year.label</source>
+                <target>Année précédente</target>
+            </trans-unit>
+            <trans-unit>
+                <source>dashboard.since.choices.Last 15 minutes.label</source>
+                <target>Dernières 15 minutes</target>
+            </trans-unit>
+            <trans-unit>
+                <source>dashboard.since.choices.Last 30 minutes.label</source>
+                <target>Dernières 30 minutes</target>
+            </trans-unit>
+            <trans-unit>
+                <source>dashboard.since.choices.Last 1 hour.label</source>
+                <target>Dernière heure</target>
+            </trans-unit>
+            <trans-unit>
+                <source>dashboard.since.choices.Last 4 hours.label</source>
+                <target>Dernières 4 heures</target>
+            </trans-unit>
+            <trans-unit>
+                <source>dashboard.since.choices.Last 12 hours.label</source>
+                <target>Dernières 12 heures</target>
+            </trans-unit>
+            <trans-unit>
+                <source>dashboard.since.choices.Last 24 hours.label</source>
+                <target>Dernières 24 heures</target>
+            </trans-unit>
+            <trans-unit>
+                <source>dashboard.since.choices.Last 7 days.label</source>
+                <target>Derniers 7 jours</target>
+            </trans-unit>
+            <trans-unit>
+                <source>dashboard.since.choices.Last 30 days.label</source>
+                <target>Derniers 30 jours</target>
+            </trans-unit>
+            <trans-unit>
+                <source>dashboard.since.choices.Last 60 days.label</source>
+                <target>Derniers 60 jours</target>
+            </trans-unit>
+            <trans-unit>
+                <source>dashboard.since.choices.Last 90 days.label</source>
+                <target>Derniers 90 jours</target>
+            </trans-unit>
+            <trans-unit>
+                <source>dashboard.since.choices.Last 6 months.label</source>
+                <target>Derniers 6 mois</target>
+            </trans-unit>
+            <trans-unit>
+                <source>dashboard.since.choices.Last 1 year.label</source>
+                <target>Derniers 365 jours (1 an)</target>
+            </trans-unit>
+            <trans-unit>
+                <source>dashboard.since.choices.Last 2 years.label</source>
+                <target>Derniers 730 jours (2 ans)</target>
+            </trans-unit>
+            <trans-unit>
+                <source>dashboard.since.choices.Last 5 years.label</source>
+                <target>Derniers 1825 jours (5 ans)</target>
+            </trans-unit>
+            <trans-unit>
+                <source>dashboard.since_custom.label</source>
+                <target>Depuis un moment précis</target>
+            </trans-unit>
+            <trans-unit>
+                <source>dashboard.until.label</source>
+                <target>Jusqu'à un moment précis</target>
+            </trans-unit>
+            <trans-unit>
+                <source>dashboard.until.placeholder</source>
+                <target>Maintenant</target>
+            </trans-unit>
+            <trans-unit>
+                <source>dashboard.since.label</source>
+                <target>Depuis...</target>
+            </trans-unit>
+            <trans-unit>
+                <source>dashboard.since.placeholder</source>
+                <target>-- Définir un interval précis --</target>
+            </trans-unit>
+            <trans-unit>
+                <source>dashboard.timeFilterForm.submit.value</source>
+                <target>OK</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
+
+
+

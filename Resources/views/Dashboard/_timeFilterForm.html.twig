@@ -1,0 +1,35 @@
+{% block form %}
+    {{ form_start(timeFilterForm) }}
+        {{ form_widget(timeFilterForm.since) }}
+        <div class="time-filter--absolute-fields" {% if timeFilter.since != '' %}style="display: none;"{% endif %}>
+            <div class="row">
+                <div class="col-md-6">
+                    {{ form_row(timeFilterForm.since_custom) }}
+                </div>
+                <div class="col-md-6">
+                    {{ form_row(timeFilterForm.until) }}
+                </div>
+            </div>
+        </div>
+        {{ form_rest(timeFilterForm) }}
+        {% block timeFilterForm_submitButton %}
+            <button type="submit">
+                {% block timeFilterForm_submitButton_value %}
+                    {{ 'dashboard.timeFilterForm.submit.value'|trans({}, 'metrics')|raw }}
+                {% endblock timeFilterForm_submitButton_value %}
+            </button>
+        {% endblock %}
+    {{ form_end(timeFilterForm) }}
+{% endblock form %}
+
+{% block script %}
+        <script>
+            $('#time_filter_since').on('change', function() {
+                if (this.value == '') {
+                    $('.time-filter--absolute-fields').show();
+                } else {
+                    $('.time-filter--absolute-fields').hide();
+                }
+            });
+        </script>
+{% endblock script %}
