@@ -22,6 +22,8 @@ class AppKernel extends Kernel
         return $bundles
 ```
 
+[Be sure the serializer is enabled](http://symfony.com/doc/current/cookbook/serializer.html#activating-the-serializer).
+
 ## Processors
 
 ### UserProcessor
