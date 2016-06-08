@@ -2,7 +2,7 @@
 
 ## Synopsis
 
-This bundle works with Monolog and is used to improve monitoring or metric logging process.
+This bundle works with Monolog and is used to improve monitoring or metric logging process thanks to ELK (Elasticsearch, Logstash, Kibana).
 
 ## Install
 
