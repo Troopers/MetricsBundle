@@ -48,7 +48,7 @@ class Dashboard
     /**
      * @var string
      *
-     * @ORM\Column(name="width", type="integer", nullable=true)
+     * @ORM\Column(name="width", type="text", nullable=true)
      */
     private $width;
 
