@@ -53,7 +53,8 @@ class UserProcessor
     }
 
     /**
-     * @param  array $record
+     * @param array $record
+     *
      * @return array
      */
     public function __invoke(array $record)
@@ -73,26 +74,26 @@ class UserProcessor
      *
      * @return array
      */
-    private function getUserInfo(TokenInterface $token)
+    private function getUserInfo(TokenInterface $token = null)
     {
         if (self::$cache) {
             return self::$cache;
         }
 
         $infos = [
-            'authenticated' => false
+            'authenticated' => false,
         ];
-        if ($token->isAuthenticated() && is_object($token->getUser())) {
+        if (null !== $token && $token->isAuthenticated() && is_object($token->getUser())) {
             $infos = [
                 'authenticated' => true,
                 'id' => $token->getUser()->getId(),
-                'username' => $token->getUsername()
+                'username' => $token->getUsername(),
             ];
 
             //if a serializer group is given, serialize and add to the extra fields
             if (count($this->serializerUserGroups)) {
                 $userInfos = json_decode(
-                    $this->serializer->serialize($token->getUser(), "json", ['groups' => $this->serializerUserGroups]),
+                    $this->serializer->serialize($token->getUser(), 'json', ['groups' => $this->serializerUserGroups]),
                     true
                 );
                 foreach ($userInfos as $property => $value) {
