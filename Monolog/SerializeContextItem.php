@@ -2,6 +2,7 @@
 namespace Troopers\MetricsBundle\Monolog;
 
 use Doctrine\Common\Util\ClassUtils;
+use JMS\Serializer\SerializationContext;
 use Symfony\Component\Serializer\Serializer;
 
 /**
@@ -46,11 +47,31 @@ class SerializeContextItem
      *
      * @return []
      */
-    public function serialize(Serializer $serializer)
+    public function serialize($serializer)
     {
-        return json_decode(
-            $serializer->serialize($this->object, $this->format, ['groups' => $this->serializerGroups]), true
-        );
+        if ($serializer instanceof Serializer) {
+            $serializedObject = $serializer->serialize(
+                $this->object,
+                $this->format,
+                ['groups' => $this->serializerGroups]
+            );
+        } elseif (
+            class_exists('\JMS\Serializer\Serializer') &&
+            $serializer instanceof \JMS\Serializer\Serializer
+        ) {
+            $serializedObject = $serializer->serialize(
+                $this->object,
+                'json',
+                SerializationContext::create()
+                    ->setGroups(array_values($this->serializerGroups))
+            );
+        } else {
+            throw new \Exception(sprintf(
+                'Serialization with %s is not implement', get_class($serializer)
+            ));
+        }
+
+        return json_decode($serializedObject, true);
     }
 
     /**

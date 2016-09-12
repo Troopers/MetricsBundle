@@ -5,6 +5,7 @@ namespace Troopers\MetricsBundle\Form\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use Symfony\Component\Form\Extension\Core\Type\TimezoneType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -69,6 +70,10 @@ class TimeFilterType extends AbstractType
                     'data-provider' => 'datetimepicker',
                     'data-format' => 'dd/mm/YYYY H:i',
                 ]
+            ])
+            ->add('timezone', TimezoneType::class, [
+                'label' => 'dashboard.timezone.label',
+                'required' => true
             ]);
     }
 

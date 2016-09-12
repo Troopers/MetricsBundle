@@ -22,7 +22,10 @@ class AppKernel extends Kernel
         return $bundles
 ```
 
-[Be sure the serializer is enabled](http://symfony.com/doc/current/cookbook/serializer.html#activating-the-serializer).
+Be sure some serializer is enabled:
+
+- [Symfony serializer](http://symfony.com/doc/current/cookbook/serializer.html#activating-the-serializer).
+- [JMS serializer](http://jmsyst.com/libs/serializer).
 
 ## Processors
 
