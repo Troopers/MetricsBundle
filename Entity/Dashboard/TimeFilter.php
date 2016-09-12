@@ -42,6 +42,19 @@ class TimeFilter
      */
     private $until;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="timezone", type="string", nullable=true, options={
+     *     "default" : "Europe/Paris"
+     * })
+     */
+    private $timezone;
+
+    public function __construct($timezone = "Europe/Paris") {
+        $this->timezone = $timezone;
+    }
+
 
     /**
      * Get id
@@ -74,7 +87,7 @@ class TimeFilter
      */
     public function getSince($autoTransform = true)
     {
-        $now = new \DateTime();
+        $now = new \DateTime('now', new \DateTimeZone($this->getTimezone()));
         if ($autoTransform) {
             switch ($this->since) {
                 case 'this week':
@@ -139,13 +152,38 @@ class TimeFilter
         $until = null !== $this->since ? null : $this->until;
         switch ($this->getSince(false)) {
             case 'yesterday':
-                return new \DateTime('today -1 second');
+                return new \DateTime(
+                    'today -1 second',
+                    new \DateTimeZone($this->getTimezone())
+                );
                 break;
             case 'yesterday -1 day':
-                return new \DateTime('yesterday -1 second');
+                return new \DateTime(
+                    'yesterday -1 second',
+                    new \DateTimeZone($this->getTimezone())
+                );
                 break;
         }
         return $until;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTimezone()
+    {
+        return $this->timezone;
+    }
+
+    /**
+     * @param string $timezone
+     * @return TimeFilter
+     */
+    public function setTimezone($timezone)
+    {
+        $this->timezone = $timezone;
+
+        return $this;
     }
 }
 
