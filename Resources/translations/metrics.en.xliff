@@ -122,6 +122,10 @@
                 <source>dashboard.timeFilterForm.submit.value</source>
                 <target>OK</target>
             </trans-unit>
+            <trans-unit>
+                <source>dashboard.timezone.label</source>
+                <target>Timezone</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

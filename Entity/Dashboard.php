@@ -15,6 +15,7 @@ class Dashboard
 {
     public $sinceDate;
     public $untilDate;
+
     /**
      * @var integer
      *
@@ -125,7 +126,9 @@ class Dashboard
         if (null === $this->sinceDate = $timeFilter->getSinceCustom()) {
             $this->sinceDate = new \DateTime($timeFilter->getSince());
         }
-        $this->untilDate = $timeFilter->getUntil() ?: new \DateTime();
+        $this->untilDate = $timeFilter->getUntil() ?: new \DateTime(
+            $timeFilter->getTimezone()
+        );
 
         //replace time value in url
         $this->url = preg_replace(
