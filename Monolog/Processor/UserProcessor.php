@@ -15,6 +15,7 @@ use Monolog\Logger;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Serializer\Serializer;
+use Troopers\MetricsBundle\Monolog\SerializeContextItem;
 
 /**
  * Injects base User data in all records.
@@ -44,7 +45,10 @@ class UserProcessor
      * @param array        $serializerUserGroups
      * @param int          $level
      */
-    public function __construct(TokenStorage $tokenStorage, Serializer $serializer, array $serializerUserGroups, $level = Logger::DEBUG)
+    public function __construct(TokenStorage $tokenStorage,
+                                $serializer,
+                                array $serializerUserGroups,
+                                $level = Logger::DEBUG)
     {
         $this->level = Logger::toMonologLevel($level);
         $this->tokenStorage = $tokenStorage;
@@ -83,7 +87,11 @@ class UserProcessor
         $infos = [
             'authenticated' => false,
         ];
-        if (null !== $token && $token->isAuthenticated() && is_object($token->getUser())) {
+        if (
+            null !== $token &&
+            $token->isAuthenticated() &&
+            is_object($token->getUser())
+        ) {
             $infos = [
                 'authenticated' => true,
                 'id' => $token->getUser()->getId(),
@@ -92,10 +100,12 @@ class UserProcessor
 
             //if a serializer group is given, serialize and add to the extra fields
             if (count($this->serializerUserGroups)) {
-                $userInfos = json_decode(
-                    $this->serializer->serialize($token->getUser(), 'json', ['groups' => $this->serializerUserGroups]),
-                    true
+                $serializeContextItem = new SerializeContextItem(
+                    $token->getUser(),
+                    $this->serializerUserGroups
                 );
+                $userInfos = $serializeContextItem->serialize($this->serializer);
+
                 foreach ($userInfos as $property => $value) {
                     $userInfos['user_'.$property] = $value;
                     unset($userInfos[$property]);
