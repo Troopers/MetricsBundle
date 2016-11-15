@@ -1,4 +1,5 @@
 # MetricsBundle
+[![Build Status](https://travis-ci.org/Troopers/MetricsBundle.svg?branch=master)](https://travis-ci.org/Troopers/MetricsBundle)
 
 ## Synopsis
 
