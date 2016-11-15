@@ -5,7 +5,7 @@ namespace Troopers\MetricsBundle\Entity\Dashboard;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * TimeFilter
+ * TimeFilter.
  *
  * @ORM\Table(name="metrics_time_filter")
  * @ORM\Entity
@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class TimeFilter
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
@@ -51,15 +51,15 @@ class TimeFilter
      */
     private $timezone;
 
-    public function __construct($timezone = "Europe/Paris") {
+    public function __construct($timezone = 'Europe/Paris')
+    {
         $this->timezone = $timezone;
     }
 
-
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -67,7 +67,7 @@ class TimeFilter
     }
 
     /**
-     * Set since
+     * Set since.
      *
      * @param string $since
      *
@@ -81,7 +81,7 @@ class TimeFilter
     }
 
     /**
-     * Get since
+     * Get since.
      *
      * @return string
      */
@@ -101,11 +101,12 @@ class TimeFilter
                     break;
             }
         }
+
         return $this->since;
     }
 
     /**
-     * Set sinceCustom
+     * Set sinceCustom.
      *
      * @param \DateTime $sinceCustom
      *
@@ -119,7 +120,7 @@ class TimeFilter
     }
 
     /**
-     * Get sinceCustom
+     * Get sinceCustom.
      *
      * @return \DateTime
      */
@@ -129,7 +130,7 @@ class TimeFilter
     }
 
     /**
-     * Set until
+     * Set until.
      *
      * @param \DateTime $until
      *
@@ -143,7 +144,7 @@ class TimeFilter
     }
 
     /**
-     * Get until
+     * Get until.
      *
      * @return \DateTime
      */
@@ -164,6 +165,7 @@ class TimeFilter
                 );
                 break;
         }
+
         return $until;
     }
 
@@ -177,6 +179,7 @@ class TimeFilter
 
     /**
      * @param string $timezone
+     *
      * @return TimeFilter
      */
     public function setTimezone($timezone)
@@ -186,4 +189,3 @@ class TimeFilter
         return $this;
     }
 }
-

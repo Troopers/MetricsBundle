@@ -1,4 +1,5 @@
 <?php
+
 namespace Troopers\MetricsBundle\Monolog;
 
 use Doctrine\Common\Util\ClassUtils;
@@ -6,15 +7,13 @@ use JMS\Serializer\SerializationContext;
 use Symfony\Component\Serializer\Serializer;
 
 /**
- * Class SerializeContextItem
- *
- * @package Troopers\MetricsBundle\Monolog
+ * Class SerializeContextItem.
  */
 class SerializeContextItem
 {
     protected $format;
     /**
-     * @var Object
+     * @var object
      */
     protected $object;
     /**

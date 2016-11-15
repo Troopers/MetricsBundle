@@ -12,10 +12,9 @@ use Troopers\MetricsBundle\Entity\Dashboard\TimeFilter;
 use Troopers\MetricsBundle\Form\Type\TimeFilterType;
 
 /**
- * Class DashboardController
- * @Route("/dashboard")
+ * Class DashboardController.
  *
- * @package Troopers\MetricsBundle\Controller
+ * @Route("/dashboard")
  */
 class DashboardController extends Controller
 {
@@ -24,6 +23,7 @@ class DashboardController extends Controller
      * @Template
      * @Route("/{id}", name="troopers_metrics_dashboard_show")
      * @Method({"GET"})
+     *
      * @return array
      */
     public function showAction(Request $request, Dashboard $dashboard)
@@ -34,8 +34,8 @@ class DashboardController extends Controller
         $dashboard->handleTimeFilter($timeFilter);
 
         return [
-            'dashboard' => $dashboard,
-            'timeFilter' => $timeFilter,
+            'dashboard'      => $dashboard,
+            'timeFilter'     => $timeFilter,
             'timeFilterForm' => $timeFilterForm->createView(),
         ];
     }
@@ -46,8 +46,8 @@ class DashboardController extends Controller
      * @param TimeFilter $timeFilter
      *
      * @return \Symfony\Component\Form\Form The form
-     * @internal param Request $request
      *
+     * @internal param Request $request
      */
     private function createTimeFilterForm(TimeFilter $timeFilter, Dashboard $dashboard)
     {

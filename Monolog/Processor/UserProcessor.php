@@ -94,8 +94,8 @@ class UserProcessor
         ) {
             $infos = [
                 'authenticated' => true,
-                'id' => $token->getUser()->getId(),
-                'username' => $token->getUsername(),
+                'id'            => $token->getUser()->getId(),
+                'username'      => $token->getUsername(),
             ];
 
             //if a serializer group is given, serialize and add to the extra fields

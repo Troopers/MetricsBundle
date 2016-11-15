@@ -11,10 +11,9 @@ use Troopers\MetricsBundle\Form\Type\LogType;
 use Troopers\MetricsBundle\Model\Log;
 
 /**
- * Class SandboxController
- * @Route("/sandbox")
+ * Class SandboxController.
  *
- * @package Troopers\MetricsBundle\Controller
+ * @Route("/sandbox")
  */
 class SandboxController extends Controller
 {
@@ -23,6 +22,7 @@ class SandboxController extends Controller
      * @Template
      * @Route("/newLog", name="troopers_metrics_sandbox_newLog")
      * @Method({"GET", "POST"})
+     *
      * @return array
      */
     public function newLogAction(Request $request)
@@ -53,8 +53,8 @@ class SandboxController extends Controller
      * @param Log $log
      *
      * @return \Symfony\Component\Form\Form The form
-     * @internal param Request $request
      *
+     * @internal param Request $request
      */
     private function createLogForm(Log $log)
     {

@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Troopers\MetricsBundle\Entity\Dashboard\TimeFilter;
 
 /**
- * Dashboard
+ * Dashboard.
 
  * @ORM\Table(name="metrics_dashboard")
  * @ORM\Entity
@@ -17,7 +17,7 @@ class Dashboard
     public $untilDate;
 
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
@@ -53,11 +53,10 @@ class Dashboard
      */
     private $width;
 
-
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -65,7 +64,7 @@ class Dashboard
     }
 
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name
      *
@@ -79,7 +78,7 @@ class Dashboard
     }
 
     /**
-     * Get name
+     * Get name.
      *
      * @return string
      */
@@ -89,7 +88,7 @@ class Dashboard
     }
 
     /**
-     * Set url
+     * Set url.
      *
      * @param string $url
      *
@@ -103,7 +102,7 @@ class Dashboard
     }
 
     /**
-     * Get url
+     * Get url.
      *
      * @return string
      */
@@ -113,6 +112,7 @@ class Dashboard
             preg_match('/src="([^"]+)"/', $this->url, $match);
             $this->url = $match[1];
         }
+
         return $this->url;
     }
 
@@ -145,7 +145,7 @@ class Dashboard
     }
 
     /**
-     * @return integer
+     * @return int
      */
     public function getHeight()
     {
@@ -153,7 +153,7 @@ class Dashboard
     }
 
     /**
-     * @param integer $height
+     * @param int $height
      *
      * @return $this
      */
@@ -165,7 +165,7 @@ class Dashboard
     }
 
     /**
-     * @return integer
+     * @return int
      */
     public function getWidth()
     {
@@ -173,7 +173,7 @@ class Dashboard
     }
 
     /**
-     * @param integer $width
+     * @param int $width
      *
      * @return $this
      */
@@ -184,4 +184,3 @@ class Dashboard
         return $this;
     }
 }
-
