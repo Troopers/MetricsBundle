@@ -27,7 +27,7 @@ class Log
     private $context;
 
     /**
-     * constructor
+     * constructor.
      */
     public function __construct()
     {
@@ -124,4 +124,3 @@ class Log
         return $this;
     }
 }
-

@@ -11,9 +11,6 @@
 
 namespace Troopers\MetricsBundle\Monolog\Processor;
 
-use Monolog\Logger;
-use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage;
-use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Serializer\Serializer;
 use Troopers\MetricsBundle\Monolog\SerializeContextItem;
 
@@ -32,7 +29,7 @@ class ContextSerializerProcessor
     /**
      * UserProcessor constructor.
      *
-     * @param Serializer   $serializer
+     * @param Serializer $serializer
      */
     public function __construct($serializer)
     {
@@ -40,7 +37,8 @@ class ContextSerializerProcessor
     }
 
     /**
-     * @param  array $record
+     * @param array $record
+     *
      * @return array
      */
     public function __invoke(array $record)
