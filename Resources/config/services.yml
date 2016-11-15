@@ -2,9 +2,9 @@ services:
     troopers_metrics.monolog_processor.user_processor:
         class: Troopers\MetricsBundle\Monolog\Processor\UserProcessor
         arguments:
-          - @security.token_storage
-          - @serializer
-          - %metrics.serializer.user_groups%
+            - "@security.token_storage"
+            - "@serializer"
+            - "%metrics.serializer.user_groups%"
         tags:
             - { name: monolog.processor, method: __invoke, channel: app}
 
@@ -16,6 +16,6 @@ services:
     troopers_metrics.monolog_processor.contextSerializer_processor:
         class: Troopers\MetricsBundle\Monolog\Processor\ContextSerializerProcessor
         arguments:
-          - @serializer
+            - "@serializer"
         tags:
             - { name: monolog.processor, method: __invoke, channel: app}
