@@ -1,5 +1,6 @@
 # MetricsBundle
 [![Build Status](https://travis-ci.org/Troopers/MetricsBundle.svg?branch=master)](https://travis-ci.org/Troopers/MetricsBundle)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/113171b2-e7d1-42ea-86d4-a07be1c468bc/mini.png)](https://insight.sensiolabs.com/projects/113171b2-e7d1-42ea-86d4-a07be1c468bc)
 
 ## Synopsis
 
