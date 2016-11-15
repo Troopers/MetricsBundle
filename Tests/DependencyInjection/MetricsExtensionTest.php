@@ -14,7 +14,7 @@ class MetricsExtensionTest extends \PHPUnit_Framework_TestCase
         $loader->load([[
             'serializer_user_groups' => [
                 'profile',
-            ]
+            ],
         ]], $container);
 
         $this->assertTrue($container->hasDefinition('troopers_metrics.monolog_processor.contextSerializer_processor'));
