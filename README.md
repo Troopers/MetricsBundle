@@ -1,6 +1,16 @@
-# MetricsBundle
+[![Troopers](https://cloud.githubusercontent.com/assets/618536/18787530/83cf424e-81a3-11e6-8f66-cde3ec5fa82a.png)](http://troopers.agency/?utm_source=MetricsBundle&utm_medium=github&utm_campaign=OpenSource)
+
+[![License](https://img.shields.io/packagist/l/troopers/metrics-bundle.svg)](https://packagist.org/packages/troopers/metrics-bundle)
+[![Version](https://img.shields.io/packagist/v/troopers/metrics-bundle.svg)](https://packagist.org/packages/troopers/metrics-bundle)
+[![Packagist DL](https://img.shields.io/packagist/dt/troopers/metrics-bundle.svg)](https://packagist.org/packages/troopers/metrics-bundle)
 [![Build Status](https://travis-ci.org/Troopers/MetricsBundle.svg?branch=master)](https://travis-ci.org/Troopers/MetricsBundle)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/113171b2-e7d1-42ea-86d4-a07be1c468bc/mini.png)](https://insight.sensiolabs.com/projects/113171b2-e7d1-42ea-86d4-a07be1c468bc)
+[![Twitter Follow](https://img.shields.io/twitter/follow/troopersagency.svg?style=social&label=Follow%20Troopers)](https://twitter.com/troopersagency)
+
+=============
+
+MetricsBundle
+=============
 
 ## Synopsis
 
@@ -20,7 +30,7 @@ class AppKernel extends Kernel
             new Troopers\MetricsBundle\MetricsBundle(),
             ...
         );
-        
+
         return $bundles
 ```
 
@@ -51,7 +61,7 @@ The results will be prefixed by `user_` (user_id, user_city...) and you don't ne
 ### ContextSerializerProcessor
 
 This processor stands for serializing objects in order to avoid you to pass serializer every where you need to log something.
-To communicate with this processor and tell it to do its job, you'll need to wrap your objects in a `ContextSerializerProcessor` 
+To communicate with this processor and tell it to do its job, you'll need to wrap your objects in a `ContextSerializerProcessor`
 and give them to the contexts like below:
 
 ```php
@@ -100,7 +110,7 @@ INSERT INTO `metrics_dashboard` (`id`, `name`, `url`, `height`, `width`)
 VALUES (1, 'base', '<iframe src="http://your.kibana.url[...]"></iframe>', 768, 1200);
 ```
 
-Then, embed the `MetricsBundle:Dashboard:show` and override (or not) the available blocks: 
+Then, embed the `MetricsBundle:Dashboard:show` and override (or not) the available blocks:
 ```twig
     {% embed 'MetricsBundle:Dashboard:show.html.twig' %}
         {% block body_title %}
