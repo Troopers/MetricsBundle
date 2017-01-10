@@ -2,127 +2,127 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
     <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
         <body>
-            <trans-unit>
+            <trans-unit id="1">
                 <source>dashboard.since.choices.Today.label</source>
                 <target>Today</target>
             </trans-unit>
-            <trans-unit>
+            <trans-unit id="2">
                 <source>dashboard.since.choices.This week.label</source>
                 <target>This week</target>
             </trans-unit>
-            <trans-unit>
+            <trans-unit id="3">
                 <source>dashboard.since.choices.This month.label</source>
                 <target>This month</target>
             </trans-unit>
-            <trans-unit>
+            <trans-unit id="4">
                 <source>dashboard.since.choices.This year.label</source>
                 <target>This year</target>
             </trans-unit>
-            <trans-unit>
+            <trans-unit id="5">
                 <source>dashboard.since.choices.Yesterday.label</source>
                 <target>Yesterday</target>
             </trans-unit>
-            <trans-unit>
+            <trans-unit id="6">
                 <source>dashboard.since.choices.Day before yesterday.label</source>
                 <target>Day before yesterday</target>
             </trans-unit>
-            <trans-unit>
+            <trans-unit id="7">
                 <source>dashboard.since.choices.This day last week.label</source>
                 <target>This day last week</target>
             </trans-unit>
-            <trans-unit>
+            <trans-unit id="8">
                 <source>dashboard.since.choices.Previous week.label</source>
                 <target>Previous week</target>
             </trans-unit>
-            <trans-unit>
+            <trans-unit id="9">
                 <source>dashboard.since.choices.Previous month.label</source>
                 <target>Previous month</target>
             </trans-unit>
-            <trans-unit>
+            <trans-unit id="10">
                 <source>dashboard.since.choices.Previous year.label</source>
                 <target>Previous year</target>
             </trans-unit>
-            <trans-unit>
+            <trans-unit id="11">
                 <source>dashboard.since.choices.Last 15 minutes.label</source>
                 <target>Last 15 minutes</target>
             </trans-unit>
-            <trans-unit>
+            <trans-unit id="12">
                 <source>dashboard.since.choices.Last 30 minutes.label</source>
                 <target>Last 30 minutes</target>
             </trans-unit>
-            <trans-unit>
+            <trans-unit id="13">
                 <source>dashboard.since.choices.Last 1 hour.label</source>
                 <target>Last hour</target>
             </trans-unit>
-            <trans-unit>
+            <trans-unit id="14">
                 <source>dashboard.since.choices.Last 4 hours.label</source>
                 <target>Last 4 hours</target>
             </trans-unit>
-            <trans-unit>
+            <trans-unit id="15">
                 <source>dashboard.since.choices.Last 12 hours.label</source>
                 <target>Last 12 hours</target>
             </trans-unit>
-            <trans-unit>
+            <trans-unit id="16">
                 <source>dashboard.since.choices.Last 24 hours.label</source>
                 <target>Last 24 hours</target>
             </trans-unit>
-            <trans-unit>
+            <trans-unit id="17">
                 <source>dashboard.since.choices.Last 7 days.label</source>
                 <target>Last 7 days</target>
             </trans-unit>
-            <trans-unit>
+            <trans-unit id="18">
                 <source>dashboard.since.choices.Last 30 days.label</source>
                 <target>Last 30 days</target>
             </trans-unit>
-            <trans-unit>
+            <trans-unit id="19">
                 <source>dashboard.since.choices.Last 60 days.label</source>
                 <target>Last 60 days</target>
             </trans-unit>
-            <trans-unit>
+            <trans-unit id="20">
                 <source>dashboard.since.choices.Last 90 days.label</source>
                 <target>Last 90 days</target>
             </trans-unit>
-            <trans-unit>
+            <trans-unit id="21">
                 <source>dashboard.since.choices.Last 6 months.label</source>
                 <target>Last 6 months</target>
             </trans-unit>
-            <trans-unit>
+            <trans-unit id="22">
                 <source>dashboard.since.choices.Last 1 year.label</source>
                 <target>Last 1 year</target>
             </trans-unit>
-            <trans-unit>
+            <trans-unit id="23">
                 <source>dashboard.since.choices.Last 2 years.label</source>
                 <target>Last 2 years</target>
             </trans-unit>
-            <trans-unit>
+            <trans-unit id="24">
                 <source>dashboard.since.choices.Last 5 years.label</source>
                 <target>Last 5 years</target>
             </trans-unit>
-            <trans-unit>
+            <trans-unit id="25">
                 <source>dashboard.since_custom.label</source>
                 <target>Since a precise moment</target>
             </trans-unit>
-            <trans-unit>
+            <trans-unit id="26">
                 <source>dashboard.until.label</source>
                 <target>Until a custom date</target>
             </trans-unit>
-            <trans-unit>
+            <trans-unit id="27">
                 <source>dashboard.until.placeholder</source>
                 <target>Now</target>
             </trans-unit>
-            <trans-unit>
+            <trans-unit id="28">
                 <source>dashboard.since.label</source>
                 <target>Date range...</target>
             </trans-unit>
-            <trans-unit>
+            <trans-unit id="29">
                 <source>dashboard.since.placeholder</source>
                 <target>-- Set a precise interval --</target>
             </trans-unit>
-            <trans-unit>
+            <trans-unit id="30">
                 <source>dashboard.timeFilterForm.submit.value</source>
                 <target>OK</target>
             </trans-unit>
-            <trans-unit>
+            <trans-unit id="31">
                 <source>dashboard.timezone.label</source>
                 <target>Timezone</target>
             </trans-unit>
