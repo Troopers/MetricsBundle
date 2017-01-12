@@ -132,9 +132,9 @@ class Dashboard
 
         //replace time value in url
         $this->url = preg_replace(
-            '/time:\((from:.*)\)\)&/',
+            '/from[:|%3A](.*)\)\)/',
             sprintf(
-                'time:(from:\'%s\',mode:absolute,to:\'%s\'))&',
+                'from:\'%s\',mode:absolute,to:\'%s\'))',
                 $this->sinceDate->format('Y-m-d\TH:i:s.0'),
                 $this->untilDate->format('Y-m-d\TH:i:s.0')
             ),
