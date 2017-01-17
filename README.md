@@ -86,6 +86,23 @@ $logger->info('a test in the past', ['@datetime' => new \DateTime('10 days ago')
 
 By default, this processor, is only available for the `app` channel, you can add an other or ovveride the service declaration to use on other handler or channel.
 
+### DomainProcessor
+
+In some case, you need to add some extra information to improve your logs: application name, environment...
+You can add them in `extra_fields`
+
+```yml
+metrics:
+    extra_fields:
+        app: 'Acme App'
+        env: 'preprod'
+```
+Only `scalar`values are allowed. (string, integer, boolean, float, null) 
+
+This processor also add request Uri when she his defined
+ 
+By default, this processor is available for all channels.
+
 ## Log sandbox
 
 Sometime, we just want to send log to test something, this log sandbox to help you to accomplish this small thing.
