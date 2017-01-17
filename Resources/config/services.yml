@@ -19,3 +19,11 @@ services:
             - "@serializer"
         tags:
             - { name: monolog.processor, method: __invoke, channel: app}
+
+    troopers_metrics.monolog_processor.domain_processor:
+        class: Troopers\MetricsBundle\Monolog\Processor\DomainProcessor
+        arguments:
+            - "%metrics.extra_fields%"
+            - "@request_stack"
+        tags:
+            - { name: monolog.processor, method: __invoke}

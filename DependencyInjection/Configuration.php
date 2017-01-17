@@ -22,8 +22,14 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
+                ->arrayNode('extra_fields')
+                    ->useAttributeAsKey('name')
+                    ->prototype('scalar')
+                    ->end()
+                ->end()
                 ->arrayNode('serializer_user_groups')
                     ->prototype('scalar')->end()
+                 ->end()
             ->end();
 
         return $treeBuilder;

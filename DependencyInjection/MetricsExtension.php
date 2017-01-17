@@ -23,6 +23,7 @@ class MetricsExtension extends Extension
         $config = $this->processConfiguration($configuration, $configs);
 
         $container->setParameter('metrics.serializer.user_groups', $config['serializer_user_groups']);
+        $container->setParameter('metrics.extra_fields', $config['extra_fields']);
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
