@@ -103,6 +103,12 @@ This processor also add request Uri when she his defined
  
 By default, this processor is available for all channels.
 
+### GitProcessor
+
+This processor try to find git revision with git command or in `REVISION` file at the root of application 
+
+By default, this processor is available for all channels.
+
 ## Log sandbox
 
 Sometime, we just want to send log to test something, this log sandbox to help you to accomplish this small thing.
