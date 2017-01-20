@@ -20,6 +20,8 @@ class MetricsExtensionTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($container->hasDefinition('troopers_metrics.monolog_processor.contextSerializer_processor'));
         $this->assertTrue($container->hasDefinition('troopers_metrics.monolog_processor.alterDateTime_processor'));
         $this->assertTrue($container->hasDefinition('troopers_metrics.monolog_processor.user_processor'));
+        $this->assertTrue($container->hasDefinition('troopers_metrics.monolog_processor.domain_processor'));
+        $this->assertTrue($container->hasDefinition('troopers_metrics.monolog_processor.git_processor'));
         $this->assertEquals(['profile'], $container->getParameter('metrics.serializer.user_groups'));
     }
 }
