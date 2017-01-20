@@ -1,4 +1,5 @@
 <?php
+
 namespace Troopers\MetricsBundle\Monolog\Processor;
 
 class GitProcessor
@@ -8,13 +9,13 @@ class GitProcessor
 
     /**
      * GitProcessor constructor.
+     *
      * @param $kernelRootDir
      */
     public function __construct($kernelRootDir)
     {
         $this->kernelRootDir = $kernelRootDir;
     }
-
 
     public function __invoke(array $record)
     {
@@ -30,14 +31,12 @@ class GitProcessor
         }
 
         //Get revision number from .git
-        if($gitRev = shell_exec("git rev-parse HEAD")){
-
+        if ($gitRev = shell_exec('git rev-parse HEAD')) {
             return self::$cache = trim($gitRev);
         }
 
         //Get revision number from REVISION file
-        if($gitRev = file_get_contents($this->kernelRootDir.'/../REVISION')){
-
+        if ($gitRev = file_get_contents($this->kernelRootDir.'/../REVISION')) {
             return self::$cache = $gitRev;
         }
 
