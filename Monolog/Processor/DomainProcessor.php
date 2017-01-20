@@ -1,17 +1,15 @@
 <?php
+
 namespace Troopers\MetricsBundle\Monolog\Processor;
 
-use Behat\Mink\Exception\ExpectationException;
 use Symfony\Component\HttpFoundation\RequestStack;
-use Symfony\Component\HttpFoundation\Session\Session;
-use Symfony\Component\Serializer\Serializer;
 
 class DomainProcessor
 {
     private $extras_fields;
     private $requestStack;
 
-    function __construct($extras_fields, RequestStack $requestStack)
+    public function __construct($extras_fields, RequestStack $requestStack)
     {
         $this->extras_fields = $extras_fields;
         $this->requestStack = $requestStack;
