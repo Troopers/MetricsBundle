@@ -31,6 +31,6 @@ services:
     troopers_metrics.monolog_processor.git_processor:
         class: Troopers\MetricsBundle\Monolog\Processor\GitProcessor
         arguments:
-            - "%kernel.root_dir%"
+            - "%kernel.root_dir%/.."
         tags:
             - { name: monolog.processor, method: __invoke}
