@@ -6,12 +6,13 @@ use Troopers\MetricsBundle\Monolog\Processor\GitProcessor;
 
 class GitRevsionTest extends \PHPUnit_Framework_TestCase
 {
-    static $defaultPath = '/tmp';
+    public static $defaultPath = '/tmp';
 
     /**
      * @before
      */
-    public function before(){
+    public function before()
+    {
         chdir(self::$defaultPath);
         if (file_exists('REVISION')) {
             unlink('REVISION');
@@ -21,7 +22,8 @@ class GitRevsionTest extends \PHPUnit_Framework_TestCase
     /**
      * @after
      */
-    public function after() {
+    public function after()
+    {
         GitProcessor::clearCache();
     }
 
@@ -45,7 +47,7 @@ class GitRevsionTest extends \PHPUnit_Framework_TestCase
         $gitProcessor = new GitProcessor($rootPath);
         $record = $gitProcessor([]);
 
-        $this->assertRegExp("/^[0-9a-f]{40}|[0-9a-f]{6,8}$/", $record['extra']['@git']);
+        $this->assertRegExp('/^[0-9a-f]{40}|[0-9a-f]{6,8}$/', $record['extra']['@git']);
     }
 
     public function testGitRevisionWithBadRevisionFile()
@@ -53,7 +55,7 @@ class GitRevsionTest extends \PHPUnit_Framework_TestCase
         $rootPath = self::$defaultPath;
 
         $revisionFile = fopen('REVISION', 'w');
-        fputs($revisionFile, 'This is not a git commit sha');
+        fwrite($revisionFile, 'This is not a git commit sha');
         fclose($revisionFile);
 
         $gitProcessor = new GitProcessor($rootPath);
@@ -67,12 +69,12 @@ class GitRevsionTest extends \PHPUnit_Framework_TestCase
         $rootPath = self::$defaultPath;
 
         $revisionFile = fopen('REVISION', 'w');
-        fputs($revisionFile, sha1(time()));
+        fwrite($revisionFile, sha1(time()));
         fclose($revisionFile);
 
         $gitProcessor = new GitProcessor($rootPath);
         $record = $gitProcessor([]);
 
-        $this->assertRegExp("/^[0-9a-f]{40}|[0-9a-f]{6,8}$/", $record['extra']['@git']);
+        $this->assertRegExp('/^[0-9a-f]{40}|[0-9a-f]{6,8}$/', $record['extra']['@git']);
     }
 }
