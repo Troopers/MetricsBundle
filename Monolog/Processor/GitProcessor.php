@@ -32,19 +32,18 @@ class GitProcessor
 
         try {
             //Get revision number from .git
-            $gitRev = shell_exec("git rev-parse HEAD");
-            if(preg_match("/^[0-9a-f]{40}|[0-9a-f]{6,8}$/", $gitRev)){
+            $gitRev = shell_exec('git rev-parse HEAD');
+            if (preg_match('/^[0-9a-f]{40}|[0-9a-f]{6,8}$/', $gitRev)) {
                 return self::$cache = trim($gitRev);
             }
         } catch (\Exception $e) {
             error_log('GitProcessor, git rev-parse failed "'.$e->getMessage().'"');
         }
 
-
         try {
             $gitRev = file_get_contents($this->appRootDir.'/REVISION');
             //Get revision number from REVISION file
-            if(preg_match("/^[0-9a-f]{40}|[0-9a-f]{6,8}$/", $gitRev)){
+            if (preg_match('/^[0-9a-f]{40}|[0-9a-f]{6,8}$/', $gitRev)) {
                 return self::$cache = $gitRev;
             }
         } catch (\Exception $e) {
@@ -55,9 +54,10 @@ class GitProcessor
     }
 
     /**
-     * Clear Cache
+     * Clear Cache.
      */
-    static function clearCache() {
+    public static function clearCache()
+    {
         self::$cache = false;
     }
 }
