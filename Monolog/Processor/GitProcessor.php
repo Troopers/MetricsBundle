@@ -32,8 +32,7 @@ class GitProcessor
 
         //Get revision number from .git
         try {
-            if (file_exists($this->appRootDir.'/.git'))
-            {
+            if (file_exists($this->appRootDir.'/.git')) {
                 $gitRev = shell_exec('git rev-parse HEAD');
                 if (preg_match('/^[0-9a-f]{40}|[0-9a-f]{6,8}$/', $gitRev)) {
                     return self::$cache = trim($gitRev);
@@ -45,9 +44,8 @@ class GitProcessor
 
         //Get revision number from REVISION file
         try {
-            if (file_exists($this->appRootDir.'/REVISION'))
-            {
-                $gitRev = file_get_contents($this->appRootDir . '/REVISION');
+            if (file_exists($this->appRootDir.'/REVISION')) {
+                $gitRev = file_get_contents($this->appRootDir.'/REVISION');
                 if (preg_match('/^[0-9a-f]{40}|[0-9a-f]{6,8}$/', $gitRev)) {
                     return self::$cache = $gitRev;
                 }
