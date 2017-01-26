@@ -30,21 +30,25 @@ class GitProcessor
             return self::$cache;
         }
 
+        //Get revision number from .git
         try {
-            //Get revision number from .git
-            $gitRev = shell_exec('git rev-parse HEAD');
-            if (preg_match('/^[0-9a-f]{40}|[0-9a-f]{6,8}$/', $gitRev)) {
-                return self::$cache = trim($gitRev);
+            if (file_exists($this->appRootDir.'/.git')) {
+                $gitRev = shell_exec('git rev-parse HEAD');
+                if (preg_match('/^[0-9a-f]{40}|[0-9a-f]{6,8}$/', $gitRev)) {
+                    return self::$cache = trim($gitRev);
+                }
             }
         } catch (\Exception $e) {
             error_log('GitProcessor, git rev-parse failed "'.$e->getMessage().'"');
         }
 
+        //Get revision number from REVISION file
         try {
-            $gitRev = file_get_contents($this->appRootDir.'/REVISION');
-            //Get revision number from REVISION file
-            if (preg_match('/^[0-9a-f]{40}|[0-9a-f]{6,8}$/', $gitRev)) {
-                return self::$cache = $gitRev;
+            if (file_exists($this->appRootDir.'/REVISION')) {
+                $gitRev = file_get_contents($this->appRootDir.'/REVISION');
+                if (preg_match('/^[0-9a-f]{40}|[0-9a-f]{6,8}$/', $gitRev)) {
+                    return self::$cache = $gitRev;
+                }
             }
         } catch (\Exception $e) {
             error_log('GitProcessor, getRevisionread file REVISION failed : "'.$e->getMessage().'"');

@@ -42,7 +42,7 @@ class GitRevsionTest extends \PHPUnit_Framework_TestCase
 
     public function testGitRevisionWithGit()
     {
-        $rootPath = __DIR__;
+        $rootPath = __DIR__.'/../../';
         chdir($rootPath);
         $gitProcessor = new GitProcessor($rootPath);
         $record = $gitProcessor([]);
