@@ -7,8 +7,6 @@
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/113171b2-e7d1-42ea-86d4-a07be1c468bc/mini.png)](https://insight.sensiolabs.com/projects/113171b2-e7d1-42ea-86d4-a07be1c468bc)
 [![Twitter Follow](https://img.shields.io/twitter/follow/troopersagency.svg?style=social&label=Follow%20Troopers)](https://twitter.com/troopersagency)
 
-=============
-
 MetricsBundle
 =============
 
