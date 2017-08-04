@@ -11,9 +11,8 @@
         "elasticsearch/elasticsearch": "~2.1",
         "graylog2/gelf-php": "^1.5",
         "monolog/monolog": "1.*",
-        "symfony/form": "~2.3",
-        "symfony/framework-bundle": "~2.3",
-        "symfony/symfony": "~2.7|~3.0"
+        "symfony/form-bundle": "~2.7|~3.0",
+        "symfony/framework-bundle": "~2.7|~3.0"
     },
     "autoload": {
         "psr-4": { "Troopers\\MetricsBundle\\": "" }
