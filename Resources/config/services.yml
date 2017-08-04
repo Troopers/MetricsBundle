@@ -1,36 +1,36 @@
 services:
     troopers_metrics.monolog_processor.user_processor:
-        class: Troopers\MetricsBundle\Monolog\Processor\UserProcessor
+        class: 'Troopers\MetricsBundle\Monolog\Processor\UserProcessor'
         arguments:
-            - "@security.token_storage"
-            - "@serializer"
-            - "%metrics.serializer.user_groups%"
+            - '@security.token_storage'
+            - '@serializer'
+            - '%metrics.serializer.user_groups%'
         tags:
             - { name: monolog.processor, method: __invoke, channel: app}
 
     troopers_metrics.monolog_processor.alterDateTime_processor:
-        class: Troopers\MetricsBundle\Monolog\Processor\AlterDateTimeProcessor
+        class: 'Troopers\MetricsBundle\Monolog\Processor\AlterDateTimeProcessor'
         tags:
             - { name: monolog.processor, method: __invoke, channel: app}
 
     troopers_metrics.monolog_processor.contextSerializer_processor:
-        class: Troopers\MetricsBundle\Monolog\Processor\ContextSerializerProcessor
+        class: 'Troopers\MetricsBundle\Monolog\Processor\ContextSerializerProcessor'
         arguments:
-            - "@serializer"
+            - '@serializer'
         tags:
             - { name: monolog.processor, method: __invoke, channel: app}
 
     troopers_metrics.monolog_processor.domain_processor:
-        class: Troopers\MetricsBundle\Monolog\Processor\DomainProcessor
+        class: 'Troopers\MetricsBundle\Monolog\Processor\DomainProcessor'
         arguments:
-            - "%metrics.extra_fields%"
-            - "@request_stack"
+            - '%metrics.extra_fields%'
+            - '@request_stack'
         tags:
             - { name: monolog.processor, method: __invoke}
 
     troopers_metrics.monolog_processor.git_processor:
-        class: Troopers\MetricsBundle\Monolog\Processor\GitProcessor
+        class: 'Troopers\MetricsBundle\Monolog\Processor\GitProcessor'
         arguments:
-            - "%kernel.root_dir%/.."
+            - '%kernel.root_dir%/..'
         tags:
             - { name: monolog.processor, method: __invoke}
